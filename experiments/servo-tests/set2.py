@@ -18,7 +18,7 @@ def changeDeg(pin , new):
             time.sleep(0.05)
     else:
         for i in range(cur[pin]+1,new,5):
-		h.servo[pin].angle=i
+            h.servo[pin].angle = i
             time.sleep(0.05)
     cur[pin]=new
     

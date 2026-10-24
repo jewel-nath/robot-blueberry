@@ -270,7 +270,7 @@ class Myassistant():
                     selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
                     speakOffline(selectedans[0])
                     break
-            except Keyerror:
+            except KeyError:
                 say('Please check if the number of questions matches the number of answers')
 
 
@@ -281,7 +281,7 @@ class Myassistant():
                     selected=random.sample(custom_conversation['Command']['Output'][i],1)
                     os.system("python3 {}/src/movement/".format(ROOT_PATH)+selected[0])
                     break
-            except Keyerror:
+            except KeyError:
                 say('Please check if the number of inputs matches the number of outputs')
 
         if 'active sensor' in str(usrcmd).lower():

@@ -13,8 +13,8 @@ led_state = False
 old_input_state = True
 
 while True:
-	new_input_sate = GPIO.input(switch_pin)
-	if new_input_state == False and old_input_state=True
+	new_input_state = GPIO.input(switch_pin)
+	if not new_input_state and old_input_state:
 		led_state = not led_state
 	old_input_state = new_input_state
 	GPIO.output(led_pin, led_state)

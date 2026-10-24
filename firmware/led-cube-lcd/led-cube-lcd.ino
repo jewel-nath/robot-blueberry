@@ -72,7 +72,7 @@
       {
         lcd.clear();
         lcd.setCursor(1,0);
-        lcd.print("Call me Buleberry");
+        lcd.print("Call me Blueberry");
         QR();
         f4();
       }

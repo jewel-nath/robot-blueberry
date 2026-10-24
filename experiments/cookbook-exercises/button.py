@@ -11,7 +11,7 @@ GPIO.add_event_detect(18, GPIO.FALLING, callback=call)
 
 i=0
 while True:
-	i++
+	i += 1
 	print(i)
 	time.sleep(0.5)
 

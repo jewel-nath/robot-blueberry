@@ -1,46 +1,39 @@
-Connect robot with a **wifi router**
+# Working on the robot
 
-then find the IP address of robot.
+How the team reached Blueberry's Raspberry Pi in 2021.
 
-Now you can work with **VNC** or **SSH** 
+## Connect
 
-#### Work with VNC
-open vnc viwer and connet the robot using IP address.
+Connect the robot to a Wi-Fi router and find its IP address, for example in
+the router's list of connected devices. Then work on it over SSH or VNC.
 
-wih a vnc viewer you can see the raspberry PI graphical interface.
+- **SSH**, from a terminal, or PuTTY on Windows:
 
-you can use it like a computer easily.
+  ```bash
+  ssh pi@<robot-ip>
+  ```
 
-#### Work with SSH
-using SSH, you can work with a **Terminal** 
+- **VNC:** open a VNC viewer and connect to `<robot-ip>` to use the Pi's
+  desktop.
 
-or **Putty Server**(for windows).
+## If it doesn't start talking after power-on
 
+Restart its service:
 
 ```bash
-ssh pi@<raspberry pi IP>
-```
-example : 
-```bash
-ssh pi@<robot-ip>
-```
-*here `<robot-ip>` is IP address*
-
-after conneting using ssh you controll the robot using commad line.
-
-#### If robot doesn't start talking after Power On
-```bash
-  sudo systemctl stop robot.service
-  sudo systemctl start robot.service
-```
-Or, you can start the code manually 
-```bash
-~/env/bin/python -u ~/robot-blueberry/src/main.py --project_id 'test-e557a' --device_model_id 'test-e557a-robot-x5kmax'
+sudo systemctl restart robot.service
 ```
 
-#### for update the Robot OS
+Or start the program by hand, with the project and device model IDs set in
+[`systemd/robot.service`](../systemd/robot.service):
+
+```bash
+~/env/bin/python -u ~/robot-blueberry/src/main.py --project_id <project-id> --device_model_id <device-model-id>
+```
+
+## Update Raspberry Pi OS
+
 ```bash
 sudo apt update
 sudo apt dist-upgrade -y
 ```
-

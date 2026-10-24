@@ -1,9 +1,10 @@
 # Robot Blueberry
 
-A talking humanoid robot, built in 2021 by Quanta Robotics, the robotics
-team I co-founded at Comilla University. It answers questions, follows voice
-commands with its arms and hands, and drives on a wheeled base. It runs
-Python on a Raspberry Pi, with an Arduino Mega for its chest display.
+A talking humanoid robot, built in 2021 as a student project at Quanta
+Robotics, the robotics team I co-founded at Comilla University. It answers
+questions, follows voice commands with its arms and hands, and drives on a
+wheeled base. It runs Python on a Raspberry Pi, with an Arduino Mega for its
+chest display.
 
 ![Blueberry in June 2021](docs/media/robot-blueberry-2021-06-21-robot-on-bench.jpg)
 
@@ -23,18 +24,18 @@ Both are on Quanta Robotics' YouTube channel.
 ## What it does
 
 - **Talks.** It wakes to its own wake word (Porcupine) and listens through
-  an online assistant. It knows 99 questions from
+  an online assistant. It knows 86 questions from
   [`config/conversation.yaml`](config/conversation.yaml) and speaks their
   answers itself, moving its head and arms as it talks; the assistant
   answers the rest.
-- **Moves on voice commands.** Spoken commands start 20 of its moves
+- **Moves on voice commands.** Spoken commands start 23 of its moves
   ([`src/movement/`](src/movement)): hands up, a handshake, a hug, a
-  salute, a namaskar, a nod or a head shake, touching its eye, moving each
-  arm, a goodbye wave, an introduction of the team, the national anthem
-  (played from a recording while it holds a pose), and a tribute to
-  Bangabandhu. A command is the first phrase of its entry in
-  `config/conversation.yaml`, heard anywhere in a sentence; 9 of the 51
-  entries name scripts that were never written.
+  salute, a namaskar, a nod or a head shake, touching its eye or its head,
+  moving each arm or its fingers, a goodbye wave, an introduction of the
+  team, returning to its starting position, and the national anthem
+  (played from a recording while it holds a pose). A command is the first
+  phrase of one of the 44 entries in `config/conversation.yaml`, heard
+  anywhere in a sentence.
 - **Drives** on two DC motors: forward, back and turns.
 - **Watches its sensors** when told "active sensor": every two seconds it
   warns out loud of gas, smoke, darkness, or a tilt read by an MPU-6050.
@@ -46,16 +47,35 @@ Both are on Quanta Robotics' YouTube channel.
 
 **Written but not started by voice:** [`src/movement/automatic.py`](src/movement/automatic.py)
 drives on its own and backs away from obstacles with an ultrasonic sensor;
-it is run by hand, as are 15 other scripts there, such as `circle.py`,
+it is run by hand, as are 6 other scripts there, such as `circle.py`,
 `dance.py` and `swim.py`. [`src/gps/gps-map.html`](src/gps/gps-map.html)
 shows a location from a ThingSpeak channel on a map; nothing in the repo
 reads a GPS module.
 
 ## The design
 
-| | |
-|---|---|
-| <img src="docs/media/robot-blueberry-2021-05-16-servo-sketch.jpg" width="300" alt="The servo plan, drawn by hand"><br>**2021-05-16:** the first servo plan, drawn by hand: each servo numbered on a body outline, the GPIO ones marked | <img src="docs/servo-map.png" width="300" alt="The servo map"><br>**2021-05-23:** the same plan redrawn: each servo's channel on the I2C driver (I-) or pin on the Raspberry Pi (G-), and the base's motor pins |
+Blueberry has 22 servos: 16 on the PCA9685 board, numbered by channel, and
+6 on the Raspberry Pi's GPIO, numbered by BCM pin.
+[`src/move.py`](src/move.py) reads their pins and starting angles from
+[`config/configuration.yaml`](config/configuration.yaml), and most arm moves
+start and end at these angles.
+
+| Body part | Channel or pin | Starting angle |
+|---|---|---|
+| Head, nodding | I2C 0 | 0° |
+| Head, turning | GPIO 12 | 180° |
+| Right arm | I2C 1, 3, 5, 7, 9 | 50°, 0°, 170°, 180°, 60° |
+| Right-hand fingers | I2C 11, 12, 13, 14, 15 | 0°, 180°, 180°, 0°, 90° |
+| Left arm | I2C 2, 4, 6, 8, 10 | 130°, 170°, 0°, 0°, 150° |
+| Left-hand fingers | GPIO 11, 8, 10, 9, 25 | 180°, 180°, 0°, 0°, 0° |
+
+<img src="docs/media/robot-blueberry-2021-05-16-servo-sketch.jpg" width="300" alt="The first servo plan, drawn by hand">
+
+**2021-05-16:** the first servo plan, drawn by hand: each servo numbered on
+a body outline. Its GPIO numbers for the head and the fingers are places on
+the Pi's header, not BCM pins: 40 (BCM 21) for the head, and 19, 21, 22, 23
+and 24 (BCM 10, 9, 25, 11 and 8) for the fingers. The code turns the head on
+BCM 12 instead.
 
 ## The build
 
@@ -69,7 +89,7 @@ reads a GPS module.
 | | |
 |---|---|
 | Body | A metal torso with clear panels, a mannequin head and servo arms, on a wheeled base |
-| Servos | 22: 16 on a PCA9685 board through Adafruit ServoKit (I2C), and 6 on the Raspberry Pi's GPIO (BCM 12, 11, 8, 10, 9 and 25), driven by [`src/move.py`](src/move.py). Their pins and positions are in [`config/configuration.yaml`](config/configuration.yaml) |
+| Servos | 22: 16 on a PCA9685 board through Adafruit ServoKit (I2C), and 6 on the Raspberry Pi's GPIO (BCM 12, 11, 8, 10, 9 and 25), driven by [`src/move.py`](src/move.py); each one's pin and starting angle are under [The design](#the-design) |
 | Voice | A Porcupine wake word, an online assistant for listening and open questions, and gTTS for its own answers ([`src/talk.py`](src/talk.py)); [`src/move_while_speaking.py`](src/move_while_speaking.py) moves the head and arms while it talks |
 | Motors | Two DC motors on an H-bridge: right on enable 27 and inputs 19 and 16, left on enable 22 and inputs 26 and 20 |
 | Sensors | Gas, smoke, fire and light on GPIO 4, 7, 13 and 21, and an MPU-6050 on I2C (0x68) for tilt ([`src/sensor.py`](src/sensor.py)); an ultrasonic sensor (trigger 24, echo 23) for the self-driving script ([`src/movement/automatic.py`](src/movement/automatic.py)) |
@@ -81,21 +101,20 @@ reads a GPS module.
 
 | Folder | Holds |
 |---|---|
-| [`src/`](src) | The program: [`main.py`](src/main.py), the voice that runs at boot, and the modules it uses for talking, moving, sensors and lights |
-| [`src/movement/`](src/movement) | One script per move: 20 are started by voice commands, the rest by hand; `expression.py` loads what they share |
+| [`src/`](src) | The program: [`main.py`](src/main.py), the voice program that runs at boot, and the modules it uses for talking, moving, sensors and lights |
+| [`src/movement/`](src/movement) | One script per move: 23 are started by voice commands, the rest by hand; `expression.py` loads what they share |
 | [`src/gps/`](src/gps) | The GPS map page |
 | [`config/`](config) | What Blueberry answers and does for each phrase, and its servos' pins and positions |
 | [`assets/`](assets) | Its sounds; `assets/models/` is for your wake-word file |
 | [`firmware/`](firmware) | The Arduino Mega sketch for the LCD and the LED cube |
 | [`scripts/`](scripts) | The installers, the list of system packages and the USB sound card setup |
 | [`systemd/`](systemd) | The service that starts Blueberry at boot |
-| [`docs/`](docs) | The servo map, the commands for running the robot, the 2021 photos (`photos/`) and this page's images (`media/`) |
-| [`experiments/`](experiments) | The first tests from 2021: servos, motors, speech, and textbook exercises |
+| [`docs/`](docs) | The commands for working on the robot, the 2021 photos (`photos/`) and this page's images (`media/`) |
+| [`experiments/`](experiments) | The first tests from 2021: servos, motors, speech, tests of the moves, obstacle avoidance, and textbook exercises |
 
 ## My part
 
-Blueberry was built by Quanta Robotics, the robotics team I co-founded at
-Comilla University: Shanjit Mondol ([@shanjit11](https://github.com/shanjit11))
+Blueberry was a team project: Shanjit Mondol ([@shanjit11](https://github.com/shanjit11))
 led the team and designed the circuits and the mechanics, and Mestu Paul
 ([@Mestu-Paul](https://github.com/Mestu-Paul)) and I wrote the code. Most of
 the commits here are mine. Mestu Paul wrote the first Arduino sketch, which I

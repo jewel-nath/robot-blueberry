@@ -90,7 +90,7 @@ Sensor:
   smoke: 7
   status: 'on'
   ultrasonic:
-    echo: 11
-    trigger: 8
+    echo: 23
+    trigger: 24
 
 

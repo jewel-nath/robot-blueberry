@@ -6,7 +6,7 @@ GPIO.setup(18, GPIO.IN)
 
 while True:
 	state = GPIO.input(18)
-	if state = True:
+	if state:
 		print("Motion detected")
 		time.sleep(1)
 

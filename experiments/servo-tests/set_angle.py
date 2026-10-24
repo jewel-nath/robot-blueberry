@@ -7,7 +7,7 @@ init  = [0,  20,  170, 180, 0, 10, 0, 0, 0, 0, 0, 0]
 limit = [35, 180, 0, 180, 140, 180, 180, 180, 180, 180, 180, 180]
 
 h = ServoKit(channels=16)
-def SetPosition :
+def SetPosition():
 	for i in range(0, 12):
 		h.servo[i].angle = init[i]
 

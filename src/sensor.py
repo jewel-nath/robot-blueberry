@@ -236,7 +236,7 @@ def loop():
         Cx = accel_data['x']
         Cy = accel_data['y']
         Cz = accel_data['z']
-        print("X = ", Cx, "\t\tY = ", Cy, "\t\tZ = ", Cy)
+        print("X = ", Cx, "\t\tY = ", Cy, "\t\tZ = ", Cz)
 
         x = abs(Cx-Ax)
         y = abs(Cy-Ay)
@@ -249,19 +249,19 @@ def loop():
             say("gas, gas, please check, there are gas leaked")
         if Smoke == 0:
             print("Something is not okay")
-            say("there are smoke, smoke is injuried to health")
+            say("there are smoke, smoke is injurious to health")
         if Ldr == 0:
             print("Something is not okay")
             say("There are everything dark, I am afraid")
         if(x>2.5  or  y>2.5  or  z>2.5):
-            say("please save me, make me strait")
+            say("please save me, make me straight")
             
         time.sleep(2)
     loop()
     
 
 def sensorOff():
-    print("Stor sensor")
+    print("Stop sensor")
     with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         sensor = yaml.load(conf, Loader=yaml.FullLoader)
         sensor['Sensor']['status'] = 'off'

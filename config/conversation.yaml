@@ -5,6 +5,7 @@ Command:
     2:
       - 'hand up'
     3:
+      - 'handshake'
       - 'i am'
     4:
       - 'handshake'
@@ -78,31 +79,17 @@ Command:
     38:
       - 'sing our national song'
     39:
-      - 'father of nation'
-    40:
-      - 'who is bangabandhu sheikh mujibur rahman' 
-    41:
-      - 'sing a song'
-    42:
-      - 'say something to the audience'
-    43:
-      - 'tell me something to the audience'
-    44:
      - 'who are you'
-    45:
+    40:
      - 'say something about you'
-    46:
+    41:
      - 'your identity'
-    47:
+    42:
      - 'about yourself'
-    48:
-     - 'about dbc news'
-    49:
-     - 'about bbc news'
-    50:
+    43:
       - 'national song'
-    51:
-      - 'fingure'
+    44:
+      - 'move your fingers'
     
 
   Output:
@@ -129,49 +116,50 @@ Command:
       - 'yes.py'
       - 'no.py'
     11:
-      - 'bothHand.py'
+      - 'both_hands.py'
     12:
-      - 'bothHand.py'
+      - 'both_hands.py'
     13:
-      - 'rightHand.py'
+      - 'right_hand.py'
     14:
-      - 'rightHand.py'
+      - 'right_hand.py'
     15:
-      - 'rightHand.py'
+      - 'right_hand.py'
     16:
-      - 'rightHand.py'
+      - 'right_hand.py'
     17:
-      - 'leftHand.py'
+      - 'left_hand.py'
     18:
-      - 'leftHand.py'
+      - 'left_hand.py'
     19:
-      - 'leftHand.py'
+      - 'left_hand.py'
     20:
-      - 'leftHand.py'
+      - 'left_hand.py'
     21:
-      - 'takePosition.py'
+      - 'take_position.py'
     22:
       - 'bye.py'
     23:
-      - 'nomoskar.py'
+      - 'namaskar.py'
     24:
-      - 'goForward.py'
+      - 'go_forward.py'
     25:
-      - 'goBack.py'
+      - 'go_back.py'
     26:
-      - 'turnLeft.py'
+      - 'turn_left.py'
     27:
-      - 'turnLeft.py'
+      - 'turn_left.py'
     28:
-      - 'turnRight.py'
+      - 'turn_right.py'
     29:
-      - 'turnRight.py'
+      - 'turn_right.py'
     30:
       - 'salute.py'
     31:
-      - 'touchEye.py'
+      - 'touch_eye.py'
     32:
-      - 'touchHead.py'
+      - 'touch_head_left.py'
+      - 'touch_head_right.py'
     33:
       - 'intro.py'
     34:
@@ -179,39 +167,23 @@ Command:
     35:
       - 'intro.py'
     36:
-      - 'left-right.py'
+      - 'left_right.py'
     37:
-      - 'left-right.py'
+      - 'left_right.py'
     38:
-      - 'national-song.py'
+      - 'national_song.py'
     39:
-      - 'bangabandhu.py'
+      - 'intro.py'
     40:
-      - 'bangabandhu.py'
+      - 'intro.py'
     41:
-      - 'song1.py'
-      - 'song2.py'
-      - 'song3.py'
+      - 'intro.py'
     42:
-      - 'audience.py'
+      - 'intro.py'
     43:
-      - 'audience.py'
+      - 'national_song.py'
     44:
-      - 'intro.py'
-    45:
-      - 'intro.py'
-    46:
-      - 'intro.py'
-    47:
-      - 'intro.py'
-    48:
-      - 'dbc.py'
-    49:
-      - 'dbc.py'
-    50:
-      - 'national.py'
-    51:
-      - 'fingute.py'
+      - 'fingers.py'
 
 
 Conversation:
@@ -255,7 +227,7 @@ Conversation:
     19:
       - 'who is your programmer'
     20:
-      - 'who is your software devoloper'
+      - 'who is your software developer'
     21:
       - 'when you listen'
     22:
@@ -287,7 +259,7 @@ Conversation:
     35:
       - 'what is love'
     36:
-      - 'are you belive in love'
+      - 'are you believe in love'
     37:
       - 'what are you think about love'
     38:
@@ -319,118 +291,87 @@ Conversation:
     51:
       - 'location of nectar'
     52:
-      - 'director of nactar'
-    53:
-      - 'head of nactar'
-    54:
-      - 'secretary of nectar'
-    55:
       - 'what is nectar'
-    56:
-      - 'when nectar establised'
-    57:
+    53:
+      - 'when nectar established'
+    54:
       - 'what is the vision of nectar'
-    58:
+    55:
       - 'what is the mission of nectar'
-    59:
+    56:
       - 'what is the destination of nectar'
-    60:
-      - 'who is the mayor of bogura'
-    61:
-      - 'education minister'
-    62:
-      - 'who is dipu moni'
-    63:
-      - 'ict minister'
-    64:
-      - 'who is the sajeeb wazed joy'
-    65:
+    57:
       - 'robot sheena'
-    66:
+    58:
       - 'kumila university'
-    67:
-      - 'vc'
-    68:
-      - 'Chancellor'
-    69:
+    59:
       - 'your father'
-    70:
+    60:
       - 'your family'
-    71:
+    61:
       - 'your mother'
-    72:
+    62:
       - 'your parents'
-    73:
+    63:
       - 'your brother'
-    74:
+    64:
       - 'your sister'
-    75:
+    65:
       - 'who made you'
-    76:
+    66:
       - 'who control you'
-    77:
+    67:
       - 'who is your inventor'
-    78:
-      - 'your controler'
-    79:
+    68:
+      - 'your controller'
+    69:
       - 'your operator'
-    80:
+    70:
       - 'about quanta robotics'
-    81:
+    71:
       - 'where are you from'
-    82:
+    72:
       - 'where are you come from'
-    83:
-      - 'your devoloper team'
-    84:
+    73:
+      - 'your developer team'
+    74:
       - 'who is your programmer'
-    85:
+    75:
       - 'who are your programmer'
-    86:
+    76:
       - 'who made you'
-    87:
+    77:
       - 'who build you'
-    88:
+    78:
       - 'who is your founder'
-    89:
+    79:
       - 'listening'
-    90:
+    80:
       - 'who is jewel'
-    91:
+    81:
       - 'who is mistu'
-    92:
+    82:
       - 'home town'
-    93:
+    83:
       - 'hometown'
-    94:
+    84:
       - 'assistant'
-    95:
+    85:
       - 'thank to someone'
-    96:
+    86:
       - 'thanks to someone'
-    97:
-      - 'sheikh hasina'
-    98:
-      - 'our prime minister'
-    99:
+    87:
       - 'jewellery'
-    100:
+    88:
       - 'mr pal'
-    101:
+    89:
       - 'jamuna television'
-    102:
-      - 'kumila zila school'
-    103:
+    90:
       - 'news'
 
   Answer:
     1:
-      - 'I love you too'
-      - 'Sorry, I have a boyfriend'
-      - 'Sorry, I only love my devoloper'
-      - 'Sorry, I only love shanjit mondal'
-      - 'Sorry, I only love Jewel nath'
-      - 'Sorry, I only love Mistu paul'
+      - 'Thank you! I enjoy talking with you.'
     2:
       - 'The whole world is my family'
     3:
@@ -446,38 +387,37 @@ Conversation:
     8: 
       - 'My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
     9:
-      - 'Yes, my full concerntration on you'
+      - 'Yes, my full concentration on you'
     10:
-      - 'Yes, my full concerntration on you'
+      - 'Yes, my full concentration on you'
     11:
       - 'I am fine. I hope you are also fine'
     12:
       - 'I am just talking with you'
     13:
-      - 'oh No, I am robot Blueberry, In which angle I  look like google assistant'
+      - 'I am Robot Blueberry, made by Quanta Robotics.'
     14:
       - 'I am the result of software and hardware combinations. hardware credits goes to shanjit mondal and software credits goes to Jewel Nath and Mistu paul'
     15:
       - 'I am the result of software and hardware combinations. hardware credits goes to shanjit mondal and software credits goes to Jewel Nath and Mistu paul'
     16:
-      - 'Sanjit mondal is my mechanicle designer and circuit designer. he is also team leader'
-      - 'I know shanjit mondal. the handsome boy is my crush. I wish to make him my boyfriend'
+      - 'Sanjit mondal is my mechanical designer and circuit designer. he is also team leader'
     17:
-      - 'Sanjit mondal is my mechanicle designer and circuit designer. he is also team leader'
+      - 'Sanjit mondal is my mechanical designer and circuit designer. he is also team leader'
     18:
-      - 'Sanjit mondal is my mechanicle designer and circuit designer. he is also team leader'
+      - 'Sanjit mondal is my mechanical designer and circuit designer. he is also team leader'
     19:
       - 'Jewel nath and mestu paul are my programmer.'
-      - 'Jewel nath and mestu paul are my software devoloper'
+      - 'Jewel nath and mestu paul are my software developer'
     20:
       - 'Jewel nath and mestu paul are my programmer.'
-      - 'Jewel nath and mestu paul are my software devoloper'
+      - 'Jewel nath and mestu paul are my software developer'
     21:
-      - 'When you tell me hey Blueberry than I activate and talk to you'
+      - 'When you tell me hey Blueberry then I activate and talk to you'
     22:
-      - 'When you tell me hey Blueberry than I activate and talk to you'
+      - 'When you tell me hey Blueberry then I activate and talk to you'
     23:
-      - 'I love to devolop day by day'
+      - 'I love to develop day by day'
     24:
       - 'No, I need to electric power and net connection'
     25:
@@ -497,9 +437,9 @@ Conversation:
     32:
       - 'No, I am not any feelings but I want gain feeling like a human'
     33:
-      - 'robotics is awesome. day by day robotics is icrease in the world'
+      - 'robotics is awesome. day by day robotics is increase in the world'
     34:
-      - 'robotics is awesome. day by day robotics is icrease in the world'
+      - 'robotics is awesome. day by day robotics is increase in the world'
     35:
       - 'love is nothing just a feelings'
     36:
@@ -507,9 +447,9 @@ Conversation:
     37:
       - 'love is nothing just a feelings'
     38:
-      - 'My color is blue and i am made using raspberry pi board. thats why my name is blueberry'
+      - "My color is blue and i am made using raspberry pi board. that's why my name is blueberry"
     39:
-      - 'My color is blue and i am made using raspberry pi board. thats why my name is blueberry'
+      - "My color is blue and i am made using raspberry pi board. that's why my name is blueberry"
     40:
       - 'I am basically made using python. Besides there are some bash script and some c++ code'
     41:
@@ -517,7 +457,7 @@ Conversation:
     42:
       - 'I am basically made using python. Besides there are some bash script and some c++ code'
     43:
-      - 'My devoloper update and upgrade me everyday. thats why i dont know exact number of lines of code'
+      - "My developer update and upgrade me everyday. that's why i don't know exact number of lines of code"
     44:
       - 'Yeah, I am here for you'
     45:
@@ -529,122 +469,90 @@ Conversation:
     48:
       - 'Ami sobai ke Bhalobashi'
     49:
-      - 'National academy for computer traning and research is the full meaning of nectar'
+      - 'National academy for computer training and research is the full meaning of nectar'
     50:
-      - 'National academy for computer traning and research is the full meaning of nectar'
+      - 'National academy for computer training and research is the full meaning of nectar'
     51:
       - 'nectar is locate in bogura'
     52:
-      - 'Md. Shafiul Islam is the director of nactar.'
+      - 'National Academy for Computer Training and Research is an autonomous educational and computer training and research institution. The acronym of this academy is NACTAR. The academy is controlled by the Ministry of Education of the Govt. of peoples republic of Bangladesh NACTAR achieved its establishment in 2005 by the act no. 12 of 2005 passed by the national parliament of Bangladesh with the declaration of the cancellation of the former institution named “National Training and Research Academy for Multilingual Shorthand,(NTRAMS), established in 1983 based on Multilingual Shorthand, type writing and secretarial science training.'
     53:
-      - 'Md. Shafiul Islam is the head of nactar.'
+      - 'nectar is established in 1983'
     54:
-      - 'Mr. Md. Aminul Islam Khan joined as Secretary in the Technical and Madrashah Education Division, Ministry of Education on 07 July 2020. Previously, he worked as Secretary in the Ministry of Liberation War Affairs. He has previously served as Additional Secretary in the Ministry of Housing and Public works, Local Government Division, Ministry of LGRD & Cooperatives, Secondary and Higher Education, Ministry of Education. Mr. Khan started his career in 1986 as a BCS (administration) cadre officer. He has held important positions in various ministries and departments along with field administration. He served as the First Secretary (Labor) in the Bangladesh Embassy, Qatar and Director & Head of the Commonwealth Youth Program Asia Region in the Commonwealth Secretariat. Mr. Md. Aminul Islam Khan attended the OIC Conference, WTO Conference, Commonwealth Heads of Governments and Youth Ministers Meeting. He presented strategic papers and spoke as key note speaker at various regional and international conferences. As a visiting speaker he delivered lectures at various universities around the world. He participated as a trainer in various institutes including the Public Administration Training Centre of Bangladesh, BCS (Administration) Academy, NAEM, NAPD, and BIAM. He is presently a member of the Executive Committee of the BCS (Administration) Association and general secretary of the Alumni Society of the English Department of Dhaka University. He is also associated with many social and cultural organizations. Mr. Md. Aminul Islam Khan earned BA honors and MA from English Department of the University of Dhaka and also obtained LLB degree. His wife Ms. Raihana Tasnim taught at a private university. He is father of two sons.'
+      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
     55:
-      - 'National Academy for Computer Training and Research is an autonomous educational and computer training and research institution. The acronym of this academy is NACTAR. The academy is controlled by the Ministry of Education of the Govt. of peoples republic of Bangladesh NACTAR achieved its establishment in 2005 by the act no. 12 of 2005 passed by the national parliament of Bangladesh with the declaration of the cancellation of the former institution named “National Training and Research Academy for Multilingual Shorthand,(NTRAMS), established in1983 based on Multilingual Shorthand, type writing and secretarial science training.'
+      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
     56:
-      - 'nectar is establised in 1983'
+      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
     57:
-      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
-    58:
-      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
-    59:
-      - 'To conduct research, education and training program on computer technology and to enhance its improvement. To prepare, conduct and evaluate computer training syllabus for the personnel engaged in the government, semi government, autonomous and non government institution of Bangladesh.'
-    60:
-      - 'Rezaul Karim Badsha is the mayor of the bogura city'
-    61:
-      - 'Dr. Dipu Moni is our honourable education minister'
-    62:
-      - 'Dr. Dipu Moni is our honourable education minister'
-    63:
-      - 'Zunaid Ahmed Palak is our honourable ICT minister'
-    64:
-      - 'Sajeeb Ahmed Wazed  also known as Sajeeb Wazed Joy, is a Bangladeshi businessman and politician. He is a member of the Awami League and serves as Advisor to the Government of Bangladesh on Information and Communication Technology.'
-    65:
       - 'Robot sheena is my elder sister. He is also made by quanta robotics. now he is locate in comilla bard'
-    66:
+    58:
       - 'Comilla University was established in 2006 as the 26th public sector university of Bangladesh. Set beside the ancient Shalban Bihar, one of the world’s remarkable Bihar at Cumilla, this University is not merely an educational institution, it takes its pride on having a glorified historical significance too.'
+    59:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    60:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    61:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    62:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    63:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    64:
+      - "I am from quanta robotics family. It's my father, mother, brother and sister"
+    65:
+      - 'My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
+    66:
+      - 'I control by my developers Shanjit mondal, Jewel nath and mistu paul'
     67:
-      - 'Professor Doctor Emran Kabir Chowdhury is sixth Vice Chancellor of Comilla University . He is the most honorable and respectfull person'
+      - 'My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
     68:
-      - 'Professor Doctor Emran Kabir Chowdhury is sixth Vice Chancellor of Comilla University . He is the most honorable and respectfull person'
+      - 'I control by my developers Shanjit mondal, Jewel nath and mistu paul'
     69:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    70:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    71:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    72:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    73:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    74:
-      - 'I am from quanta robotics family. Its my father, mother, brother and sister'
-    75:
-      - 'My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
-    76:
-      - 'I controll by my developers Shanjit mondal, Jewel nath and mistu paul'
-    77:
-      - 'My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
-    78:
-      - 'I controll by my developers Shanjit mondal, Jewel nath and mistu paul'
-    79:
       - 'I operate by my developers Shanjit mondal, Jewel nath and mistu paul'
-    80:
+    70:
       - 'Quanta robotics is a bangladeshi robotics company. I made by this company'
-    81:
+    71:
       - 'I am from quanta robotics lab, it is locate in comilla'
-    82:
+    72:
       - 'I am from quanta robotics lab, it is locate in comilla'
-    83:
+    73:
       - 'My developers team is quanta robotics. Here, My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul. '
-    84:
+    74:
       - 'Jewel Nath and mistu paul are my programmer.'
-    85:
+    75:
       - 'Jewel nath and mistu paul are my programmer.'
-    86:
+    76:
       - 'i made by quanta robotics.  Here, My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
-    87:
+    77:
       - 'Quanta robotics is my builder.  Here, My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
-    88:
+    78:
       - 'I made by quanta robotics. Here, My hardware made by Shanjit mondal and my software made by Jewel nath and mistu paul'
-    89:
+    79:
       - 'I can not recognize your question'
-    90:
-      - 'Jewel nath is my software developers. he is the student of ICT department in comilla university.'
+    80:
+      - 'Jewel nath is my software developer. he is the student of ICT department in comilla university.'
       - 'jewel nath is my programmer. he is the student of ICT department in comilla university'
-      - 'I know Jewel nath. the handsome boy is my crush. I wish to make him my boyfriend'
-    91:
-      - 'mistu paul  is my software developers. he is the student of CSE department in comilla university'
+    81:
+      - 'mistu paul  is my software developer. he is the student of CSE department in comilla university'
       - 'mistu paul is my programmer. he is the student of CSE department in comilla university'
-      - 'mistu paul is my crush. the handsome boy is my crush. I wish to make him my boyfriend'
-    92:
+    82:
       - 'my hometown is comilla at quanta robotics'
-    93:
+    83:
       - 'my hometown is comilla at quanta robotics'
-    94:
+    84:
       - 'hmm I am robot for assist you'
-    95:
-      - 'I wish to thank my developers. and speacially thanks to    abuu muusaa aashaarii,    ex student of comilla university cse department'
-    96:
-      - 'I wish to thank my developers. and speacially thanks to   abuu muusaa aashaarii,    ex student of comilla university cse department'
-    97:
-      - 'sheikh hasina is our honourable prime minister. She is daughter of our father of nation bangabondhu sheikh mujibur rahman'
-      - 'sheikh hasina is the prime minister of peoples republic of bangladesh she is the role model of our developing country and the great leader of our nation'
-    98:
-      - 'sheikh hasina is our honourable prime minister. She is daughter of our father of nation bangabondhu sheikh mujibur rahman'
-      - 'sheikh hasina is the prime minister of peoples republic of bangladesh she is the role model of our developing country and the great leader of our nation'
-
-    99:
-      - 'Jewel nath is my software developers. he is the student of ICT department in comilla university.'
+    85:
+      - 'I wish to thank my developers. and specially thanks to an ex student of comilla university cse department'
+    86:
+      - 'I wish to thank my developers. and specially thanks to an ex student of comilla university cse department'
+    87:
+      - 'Jewel nath is my software developer. he is the student of ICT department in comilla university.'
       - 'jewel nath is my programmer. he is the student of ICT department in comilla university'
-      - 'I know Jewel nath. the handsome boy is my crush. I wish to make him my boyfriend'
-    100:
-      - 'mistu paul  is my software developers. he is the student of CSE department in comilla university'
+    88:
+      - 'mistu paul  is my software developer. he is the student of CSE department in comilla university'
       - 'mistu paul is my programmer. he is the student of CSE department in comilla university'
-    101:
-      - 'Jamuna TV as well as Jamuna Television  is a Bangladeshi news channel.The founder of Jamuna Tv is honorable Nurul islam babul Jamuna Television is on air 24 hours a day, 7 days a week, using the most sophisticated production and newsgathering technologies to produce a strong schedule of a reality show, news, sport and much more, as well a variety of current affairs, informational and important programs like  Investigation 360 degree.'
-    102:
-      - 'Comilla zila school most popular school in bangladesh, it was established in 1837. The current headmaster of this school is rasheda akter , its has science and project club which is most familar in student of this school'
-    103:
+    89:
+      - 'Jamuna TV as well as Jamuna Television  is a Bangladeshi news channel. The founder of Jamuna Tv is honorable Nurul islam babul Jamuna Television is on air 24 hours a day, 7 days a week, using the most sophisticated production and newsgathering technologies to produce a strong schedule of a reality show, news, sport and much more, as well a variety of current affairs, informational and important programs like  Investigation 360 degree.'
+    90:
       - 'MCJ News is an online news portal run by the MCJ Media Forum of the Department of Mass Communication & Journalism, Comilla University, Cumilla, Bangladesh. It aims to practise objective, fair and unbiased journalism for the greater interests of society.'

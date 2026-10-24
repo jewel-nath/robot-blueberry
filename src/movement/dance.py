@@ -51,9 +51,9 @@ def talk():
     time.sleep(0.5)
     say('amiii banglar gaan gaai')
     time.sleep(0.5)
-    time.sleep('sobai amar gan sonteche')
+    say('sobai amar gan sonteche')
     time.sleep(1)
-    time.sleep('sobai ke donnobad')
+    say('sobai ke donnobad')
     
 
 p1 = multiprocessing.Process(target=talk,args=[])

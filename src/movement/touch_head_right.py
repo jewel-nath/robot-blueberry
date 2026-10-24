@@ -1,4 +1,4 @@
-from servo import *
+from expression import *
 
 takePosition()
 changeDegree([5,9,3,1],[70,180,180,90])

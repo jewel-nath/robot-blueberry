@@ -1,0 +1,3 @@
+from expression import *
+
+takePosition()

@@ -1,3 +1,6 @@
+import os
+import sys
+sys.path.append(os.path.realpath(os.path.join(__file__, '..', '..', '..', 'src', 'movement')))
 from expression import *
 from move import changeDegreeGpio                 # programming the GPIO by BCM pin numbers
 
