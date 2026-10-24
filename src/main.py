@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+# Based on GassistPi's src/main.py: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
+
 # Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +18,7 @@
 # limitations under the License.
 
 
-from moveGoogle import  speakOffline, speakOnline
+from move_while_speaking import  speakOffline, speakOnline
 from sensor import sensorOff, sensorOn
 from talk import say
 from talk import custom_conversation
@@ -63,7 +67,7 @@ USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
 mutestopbutton=True
 
-picovoice_models=['/home/pi/blueberry.ppn']
+picovoice_models=['{}/assets/models/blueberry.ppn'.format(ROOT_PATH)]
 wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
@@ -99,16 +103,16 @@ class Myassistant():
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
             
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-off.sh")
+            os.system("sudo {}/scripts/audio/sound-off.sh".format(ROOT_PATH))
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-on.sh")
+            os.system("sudo {}/scripts/audio/sound-on.sh".format(ROOT_PATH))
 
             self.t1.start()
 
 
         if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
-            subprocess.Popen(["aplay", "{}/audio-files/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.Popen(["aplay", "{}/assets/sounds/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.can_start_conversation = False
             assistantindicator('listening')
 
@@ -117,10 +121,10 @@ class Myassistant():
             self.can_start_conversation = True
             assistantindicator('off')
             
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-off.sh")
+            os.system("sudo {}/scripts/audio/sound-off.sh".format(ROOT_PATH))
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-on.sh")
+            os.system("sudo {}/scripts/audio/sound-on.sh".format(ROOT_PATH))
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -150,10 +154,10 @@ class Myassistant():
             self.can_start_conversation = True
             assistantindicator('off')
             
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-off.sh")
+            os.system("sudo {}/scripts/audio/sound-off.sh".format(ROOT_PATH))
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-on.sh")
+            os.system("sudo {}/scripts/audio/sound-on.sh".format(ROOT_PATH))
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -191,16 +195,18 @@ class Myassistant():
     def detected(self):
         if self.can_start_conversation == True:
             if self.mutestatus:
-                os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-off.sh")
+                os.system("sudo {}/scripts/audio/sound-off.sh".format(ROOT_PATH))
                 self.assistant.set_mic_mute(False)
                 time.sleep(1)
-                os.system("sudo /home/pi/Robot-Blueberry/audio-setup/sound-on.sh")
+                os.system("sudo {}/scripts/audio/sound-on.sh".format(ROOT_PATH))
                 self.assistant.start_conversation()
             if not self.mutestatus:
                 self.assistant.start_conversation()
             print('Robot is listening....')
 
 
+    # Based on Porcupine v1.9's demo/python/porcupine_demo_mic.py: https://github.com/Picovoice/porcupine
+    # Copyright 2018-2020 Picovoice Inc., Apache License 2.0
     def picovoice_run(self):
         keywords = list()
         for x in self._keyword_paths:
@@ -273,7 +279,7 @@ class Myassistant():
                 if str(custom_conversation['Command']['Input'][i][0]).lower() in str(usrcmd).lower():
                     self.assistant.stop_conversation()
                     selected=random.sample(custom_conversation['Command']['Output'][i],1)
-                    os.system("python3 /home/pi/Robot-Blueberry/src/movement/"+selected[0])
+                    os.system("python3 {}/src/movement/".format(ROOT_PATH)+selected[0])
                     break
             except Keyerror:
                 say('Please check if the number of inputs matches the number of outputs')
@@ -351,7 +357,7 @@ class Myassistant():
         with Assistant(credentials, device_model_id) as assistant:
             self.assistant = assistant
             
-            subprocess.Popen(["aplay", "/home/pi/Robot-Blueberry/audio-files/welcome.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.Popen(["aplay", "{}/assets/sounds/welcome.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             
             events = assistant.start()
             device_id = assistant.device_id

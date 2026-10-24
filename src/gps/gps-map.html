@@ -15,20 +15,20 @@
         padding: 0;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg-HSWrSsjXYmvtqMyu-MMdEE5FiQjZHw"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
 
       var map;
         var x;
         function loadmaps(){
-            $.getJSON("https://api.thingspeak.com/channels/1407390/fields/1/last.json?api_key=N7E9BIYNT7DZ6EF7", function(result){
+            $.getJSON("https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/fields/1/last.json?api_key=YOUR_THINGSPEAK_READ_KEY", function(result){
         	
             var m = result;
             x=Number(m.field1);
 
         });
-            $.getJSON("https://api.thingspeak.com/channels/1407390/fields/2/last.json?api_key=N7E9BIYNT7DZ6EF7", function(result){
+            $.getJSON("https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/fields/2/last.json?api_key=YOUR_THINGSPEAK_READ_KEY", function(result){
         	
             var m = result;
             y=Number(m.field2);

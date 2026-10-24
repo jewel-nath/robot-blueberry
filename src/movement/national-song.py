@@ -1,10 +1,12 @@
 from expression import *
 from threading import Thread
 
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
+
 def song():
     changeDegree([3,5,9], [70,60,90])
     changeDegree([7], [30])
-    os.system('aplay /home/pi/Robot-Blueberry/audio-files/national-song.wav')
+    os.system('aplay {}/assets/sounds/national-song.wav'.format(ROOT_PATH))
     takePosition()
 
 def move():

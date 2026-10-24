@@ -1,4 +1,7 @@
 #!/bin/bash
+# Based on GassistPi's scripts/gassist-installer.sh: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 # Copyright 2017 Google Inc.
 #
@@ -28,10 +31,10 @@ fi
 
 clear
 echo ""
-credname="/home/pi/robot.json"
+credname="/home/${USER}/robot.json"
 
 sudo apt-get update -y
-sed 's/#.*//' ${GIT_DIR}/Requirements/robot-system-requirements.txt | xargs sudo apt-get install -y
+sed 's/#.*//' ${GIT_DIR}/scripts/apt-packages.txt | xargs sudo apt-get install -y
 
 
 echo ""
@@ -39,10 +42,10 @@ cd /home/${USER}/
 python3 -m venv env
 env/bin/python -m pip install --upgrade pip setuptools wheel
 source env/bin/activate
-pip install -r ${GIT_DIR}/Requirements/robot-pip-requirements.txt
+pip install -r ${GIT_DIR}/requirements.txt
 
 
-pip install RPi.GPIO>=0.6.3
+pip install "RPi.GPIO>=0.6.3"
 sudo sed -i -e "s/^autospawn=no/#\0/" /etc/pulse/client.conf.d/00-disable-autospawn.conf
 if [ -f /lib/udev/rules.d/91-pulseaudio-rpi.rules ] ; then
     sudo rm /lib/udev/rules.d/91-pulseaudio-rpi.rules

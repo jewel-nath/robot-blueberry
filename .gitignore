@@ -1,0 +1,4 @@
+__pycache__/
+
+# The wake word, blueberry.ppn, is not in the repository (see the README)
+assets/models/*.ppn

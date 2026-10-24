@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Based on GassistPi's src/actions.py: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 from googletrans import Translator
 from gtts import gTTS
@@ -9,7 +12,7 @@ import yaml
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
-with open('{}/src/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
+with open('{}/config/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
     custom_conversation = yaml.load(conf, Loader=yaml.FullLoader)
 
 TTSChoice='GTTS'

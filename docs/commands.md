@@ -22,9 +22,9 @@ ssh pi@<raspberry pi IP>
 ```
 example : 
 ```bash
-ssh pi@192.168.43.25
+ssh pi@<robot-ip>
 ```
-*here 192.168.43.25 is IP address*
+*here `<robot-ip>` is IP address*
 
 after conneting using ssh you controll the robot using commad line.
 
@@ -35,7 +35,7 @@ after conneting using ssh you controll the robot using commad line.
 ```
 Or, you can start the code manually 
 ```bash
-/home/pi/env/bin/python -u /home/pi/Robot-Blueberry/src/main.py --project_id 'test-e557a' --device_model_id 'test-e557a-robot-x5kmax'
+~/env/bin/python -u ~/robot-blueberry/src/main.py --project_id 'test-e557a' --device_model_id 'test-e557a-robot-x5kmax'
 ```
 
 #### for update the Robot OS

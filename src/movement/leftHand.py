@@ -9,7 +9,7 @@ changeDegree([6,10],[80,30])
 time.sleep(2)
 
 #stop
-changeDegree([6,10],[init[6],init[10]])
-changeDegree([8],[init[8]])
-changeDegree([2],[init[2]])
-changeDegree([4],[init[4]])
+changeDegree([6,10],[Initial[6],Initial[10]])
+changeDegree([8],[Initial[8]])
+changeDegree([2],[Initial[2]])
+changeDegree([4],[Initial[4]])

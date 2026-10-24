@@ -9,13 +9,13 @@ import os
 import yaml
 
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
-with open('{}/src/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
     sensor = yaml.load(conf, Loader=yaml.FullLoader)
     
 gas  = sensor['Sensor']['gas']
 fire = sensor['Sensor']['fire']
 smoke = sensor['Sensor']['smoke']
-ldr  = sensor['Sensor']['smoke']
+ldr  = sensor['Sensor']['ldr']
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(fire, GPIO.IN)
@@ -23,6 +23,8 @@ GPIO.setup(gas, GPIO.IN)
 GPIO.setup(smoke, GPIO.IN)
 GPIO.setup(ldr, GPIO.IN)
 
+# Based on m-rtijn/mpu6050's mpu6050/mpu6050.py: https://github.com/m-rtijn/mpu6050
+# Copyright (c) 2015-2021 Martijn and contributors, MIT License
 class mpu6050:
     GRAVITIY_MS2 = 9.80665
     address = None
@@ -200,10 +202,10 @@ class mpu6050:
         
 def sensorOn():
     print("Sensor active")
-    with open('{}/src/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         sensor = yaml.load(conf, Loader=yaml.FullLoader)
         sensor['Sensor']['status'] = 'on'
-        with open('{}/src/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
+        with open('{}/config/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
             yaml.dump(sensor,conf)
     say('activated  sensor')
     mpu = mpu6050(0x68)
@@ -220,7 +222,7 @@ def sensorOn():
     
     
 def loop():
-    with open('{}/src/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         sensor = yaml.load(conf, Loader=yaml.FullLoader)
         if(sensor['Sensor']['status'] == 'off'):
             return
@@ -260,10 +262,10 @@ def loop():
 
 def sensorOff():
     print("Stor sensor")
-    with open('{}/src/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         sensor = yaml.load(conf, Loader=yaml.FullLoader)
         sensor['Sensor']['status'] = 'off'
-        with open('{}/src/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
+        with open('{}/config/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
             yaml.dump(sensor,conf)
     say('deactivated sensor')
 

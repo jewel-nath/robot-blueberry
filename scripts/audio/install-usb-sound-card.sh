@@ -1,4 +1,7 @@
 #!/bin/bash
+# Based on GassistPi's audio-drivers/USB-MIC-HDMI/scripts/install-usb-mic-hdmi.sh: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 set -o errexit
 
@@ -7,7 +10,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-cd "$(dirname "${BASH_SOURCE[0]}")/.."
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
 asoundrc=/home/${SUDO_USER}/.asoundrc
 global_asoundrc=/etc/asound.conf
@@ -26,6 +29,6 @@ fi
 
 echo 'usb-sound-card' >> $audioconfig
 
-sudo cp audio-setup/asound.conf "$global_asoundrc"
-sudo cp audio-setup/.asoundrc "$asoundrc"
+sudo cp asound.conf "$global_asoundrc"
+sudo cp .asoundrc "$asoundrc"
 echo "Installing USB sound card configuration"

@@ -31,13 +31,13 @@ hand = ServoKit(channels=16)
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 
 def readYaml():
-    with open('{}/src/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servo = yaml.load(conf, Loader=yaml.FullLoader)
     return servo
 
 
 def writeYaml(s=None):
-    with open('{}/src/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
+    with open('{}/config/configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
         if s==None:
             yaml.dump(servo,conf)
         else:
@@ -47,7 +47,7 @@ def writeYaml(s=None):
 servo = readYaml()
 
 if servo == None:
-    with open('{}/src/configurationBackUp.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/configuration-backup.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servoBackUp = yaml.load(conf, Loader=yaml.FullLoader)
     writeYaml(servoBackUp)
     servo = readYaml()

@@ -1,7 +1,10 @@
 #!/usr/bin/env python
+# Based on GassistPi's src/indicator.py: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 import RPi.GPIO as GPIO
-from moveGoogle import yes
+from move_while_speaking import yes
 from arduino import get_command
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
